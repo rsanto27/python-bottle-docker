@@ -5,7 +5,11 @@
 ## Steps to build the environment
 
 1. Make sure that python3 is installed on your OS.(Linux)
-2. Start the phyton virtual env using the command `python3 -m venv "nameOfVenv"`
+2. Clone the project into your OS.
+3. Start the phyton virtual env inside the projetc using the command `python3 -m venv "nameOfVenv"`
+4. Jump into your virtual env using the command `souce "nameOfVenv"/bin/activate`
+5. Install the dependencies using the command `pip install -r requirements/dev.txt`
+
 
 
 

@@ -34,5 +34,5 @@ def response_view():
     print(response)
     print("valid_token")
 
-#run(app, host="localhost", port=8081)
-app.run(debug=False, host='localhost', port=8081, reloader=False)
+#run(app, host="0.0.0.0", port=8081)
+app.run(debug=False, host='0.0.0.0', port=8081, reloader=False)

@@ -11,10 +11,13 @@
 5. Install the dependencies using the command `pip install -r requirements/dev.txt`
 6. Run `python3 api/src/routes.py` and localhost:8081 will be waiting for requests.
 
+## Steps to build the enviroment on docker-compose
+
+1. Make sure you have docker and compose installed on your OS.
+2. Run the command `docker-compose up --build`
 
 ## Note
 #### This project will be part of other solutions.
-
 
 
 

@@ -1,19 +1,42 @@
 import auth.auth as au
-from bottle import Bottle, run, template, request, post, route, get, response
+from bottle import Bottle, run, template, request, post, route, get, response, HTTPResponse, HTTPError, abort
 import settings as sett
 import src.app_factory as appFac
+import error_handler as err
 
+######################################################################
+############### init bottle and merge the service factory ############
 app = Bottle()
 app.merge(appFac.appFactory)
+
+######################################################################
+##################### init the settings instance #####################
 settings = sett.Settings()
 
+######################################################################
+######################### handling the errors ########################
+@app.error(403)
+def error403(error):
+    return err.error403(error)
+
+@app.error(404)
+def error404(error):
+    return err.error404(error)
+
+######################################################################
+############################# middlewares ############################
 @app.hook('before_request')
 def verify_token():
-    token = au.get_token({"name": "Rodrigo", "email": "rodrigo@email.com"})
-    print(settings.key)
+    if(request.path != "/user/token"):
+        try:
+            au.verify_token(request.headers.get("Authorization")) # TODO put on Bearer pattern
+        except:
+            abort(403,{"error":"all wrong"})
+
 
 @app.hook('after_request')
 def after_request():
+    print(response)
     enable_cors()
 
 def enable_cors():

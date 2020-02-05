@@ -7,7 +7,8 @@ def settings(cls):
             instances[cls] = cls()
         return instances[cls]
     return instance
-    
+
+# This is a singleton to give us always the same settings instance, used to generate our env    
 @settings
 class Settings:
     def __init__(self):

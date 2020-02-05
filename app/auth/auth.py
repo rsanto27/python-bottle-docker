@@ -8,18 +8,17 @@ settings = sett.Settings()
 
 def get_token(user):
     key = settings.key
-    return jwt.encode(user, key, algorithm='HS256')
+    return jwt.encode(user, key, algorithm='HS256').decode("utf-8")
 
 def decode_token(token):
     key = settings.key
     return jwt.decode(token, key, algorithms=['HS256'])
 
-
-
+def verify_token(token):
+    decoded = decode_token(token)
 
 # settings = Settings()
 # key = settings.key
-
 
 # encoded = jwt.encode({'some': 'payload'}, key, algorithm='HS256', headers={'kid': '230498151c214b788dd97f22b85410a5'})
 # print(encoded)

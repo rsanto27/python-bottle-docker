@@ -23,6 +23,10 @@ def error403(error):
 def error404(error):
     return err.error404(error)
 
+@app.error(400)
+def error400(error):
+    return err.error400(error)
+
 ######################################################################
 ############################# middlewares ############################
 @app.hook('before_request')

@@ -1,7 +1,7 @@
 from bottle import Bottle, run, template, request, post, route, get, response, HTTPResponse
 import auth.auth as au
 import src.profile.profile_business as profBusiness
-import user_validation as userValid
+import src.user.user_validation as userValid
 
 appUser = Bottle()
 
@@ -26,5 +26,13 @@ def get_retoken():
     return au.get_token(decoded)
 
 @appUser.post('/user', apply=(userValid.valid))
-
+def post_user():
+    name = request.json.get("username")
+    email = request.json.get("email")
+    return "ok"
+#     password = request.json.get("password")
+#     response.body = name + "====" +password
+#     return response
+#     #return name + "====" +password
+#     #return template('{{name}}  {{password}}', name=name, password=password)
 

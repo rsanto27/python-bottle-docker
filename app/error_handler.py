@@ -5,3 +5,7 @@ def error403(error):
 def error404(error):
     print(error) # inside error, we have all that we need, just format
     return "{'test':'testssss'}"
+
+def error400(error):
+    print(error) # inside error, we have all that we need, just format
+    return "{'testttttt':'testssss'}"

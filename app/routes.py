@@ -3,6 +3,7 @@ from bottle import Bottle, run, template, request, post, route, get, response, H
 import settings as sett
 import src.app_factory as appFac
 import error_handler as err
+import ptvsd
 
 ######################################################################
 ############### init bottle and merge the service factory ############
@@ -48,7 +49,8 @@ def enable_cors():
     response.headers['Access-Control-Allow-Headers'] = 'Accept, Accept-Type, Authorization, Content-Type, Origin, X-CSRF-Token, X-Requested-With'
     response.headers['Access-Control-Allow-Methods'] = 'DELETE, GET, OPTIONS, POST, PUT'
 
-app.run(debug=False, host='0.0.0.0', port=8081, reloader=False)
+app.run(debug=True, host='0.0.0.0', port=8081, reloader=False)
+# ptvsd.enable_attach("123", address = ('0.0.0.0', 3005))
 
 
 # @app.route('/hello')

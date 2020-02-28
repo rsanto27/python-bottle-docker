@@ -6,6 +6,7 @@ services:
       context: ./
     ports: 
       - '8081:8081'
+      - '3005:3005'
     volumes: 
       - ./:/app
     command: bash ./init.sh

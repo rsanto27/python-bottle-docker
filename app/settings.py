@@ -1,5 +1,6 @@
 from cryptography.fernet import Fernet
 
+# This is a decorator to give us the control of settings instance.
 def settings(cls):
     instances = {}
     def instance():

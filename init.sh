@@ -1,1 +1,1 @@
-python -u api/src/routes.py
+python -u app/routes.py

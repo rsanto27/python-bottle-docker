@@ -17,8 +17,11 @@ def verify():
     for key in userPost:
         print(key)
         # print(request.json[key])
-        if request.json[key] is None:
-            error["fieldsNotFound"].append(key)
+        try:
+            if request.json[key] is None:
+                error["fieldsNotFound"].append(key)
+        except:
+            pass
 
 def valid(function):
     def inner(*args, **kwargs):

@@ -7,5 +7,4 @@ def error404(error):
     return "{'test':'testssss'}"
 
 def error400(error):
-    print(error) # inside error, we have all that we need, just format
-    return "{'testttttt':'testssss'}"
+    return error.body

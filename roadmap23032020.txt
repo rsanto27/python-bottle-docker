@@ -1,0 +1,11 @@
+1- based on "@app.error" increase the way the we handle errors.
+2- inside settings, define the env if dev, prod or stage.
+3- based on user_validation, create a generic validation that will be helpfull to all models. (working)
+4- create the connection database layer.
+5- create the integration layer if the model does not access the database but talks with other apps.
+6- create the restservice's docks with swagger.
+7- increase the docker with the containers that will handle the app.error.
+8- make docker run on debbug way to debbug the app on remote way.
+9- deploy on GCP with kubernets
+10- deploy on AWS with kubernets
+11- create a default model that will handle with insert, delete, tc.

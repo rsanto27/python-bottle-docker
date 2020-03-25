@@ -1,4 +1,4 @@
-1- based on "@app.error" increase the way the we handle errors.
+1- based on "@app.error" increase the way that we handle errors.
 2- inside settings, define the env if dev, prod or stage.
 3- based on user_validation, create a generic validation that will be helpfull to all models. (working)
 4- create the connection database layer.

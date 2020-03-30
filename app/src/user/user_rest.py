@@ -25,10 +25,9 @@ def get_retoken():
     # if token ok, serch user on database, if ok renew
     return au.get_token(decoded)
 
-@appUser.post('/user', apply=(userValid.valid, userValid.testUnique))
+@appUser.post('/user', apply=(userValid.valid))
 # if used the decorator this way, its not nedded use apply
 # @userValid.valid
-# @userValid.testUnique
 def post_user():
     name = request.json.get("username")
     email = request.json.get("email")

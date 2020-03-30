@@ -1,6 +1,6 @@
-1- based on "@app.error" increase the way that we handle errors.
-2- inside settings, define the env if dev, prod or stage.
-3- based on user_validation, create a generic validation that will be helpfull to all models. (working)
+1- based on "@app.error" increase the way that we handle errors.(Done)
+2- inside settings, define the env if dev, prod or stage.(working)
+3- based on user_validation, create a generic validation that will be helpfull to all models. (Done)
 4- create the connection database layer.
 5- create the integration layer if the model does not access the database but talks with other apps.
 6- create the restservice's docks with swagger.

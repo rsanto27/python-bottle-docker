@@ -7,10 +7,6 @@ userPostModel = {
     "filtTest": "str"
 }
 
-userUniqueModel = {
-    "name": "unique"
-}
-
 def valid(function):
     return validUtils.valid(function, userPostModel)
 

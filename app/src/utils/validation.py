@@ -27,16 +27,3 @@ def valid(function, model):
         return {'error': 'ValidationError',
                 'error_message': 'Body is required (and must be JSON).'}
     return inner
-
-# just for test if is callable based on two decorators :)
-def unique(function, model):
-    def innerss(*args, **kwargs):
-        abort(400, "error")
-        if request.json:
-            print("that's ok")
-            return function(*args, **kwargs)
-        
-        response.status = 400
-        return {'error': 'ValidationError',
-                'error_message': 'Body is required (and must be JSON).'}
-    return innerss

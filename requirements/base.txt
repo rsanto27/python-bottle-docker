@@ -1,4 +1,4 @@
-bottle==0.12.13
+bottle==0.12.19
 PyJWT==1.4.0
 cryptography==2.8
 ptvsd==3.0.0
